@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout from GitHub') {
             steps {
                 git branch: 'master',
-                    url: 'https://github.com/laxmi916/node-docker-app.git'
+                    url: 'https://github.com/b211626/node-docker-app.git'
             }
         }
 
@@ -25,15 +25,15 @@ pipeline {
             }
         }
 
-        stage('Push Docker Image') {
-            steps {
-                sh 'docker push laxmi916/node-docker-app:${BUILD_NUMBER}'
-            }
-        }
+        // stage('Push Docker Image') {
+        //     steps {
+        //         sh 'docker push b211626/node-docker-app:${BUILD_NUMBER}'
+        //     }
+        // }
         
         stage('Create container') {
             steps {
-                sh 'docker run -d -p 3000:8080 laxmi916/node-docker-app:${BUILD_NUMBER}'
+                sh 'docker run -d -p 3000:8080 b211626/node-docker-app:${BUILD_NUMBER}'
             }
         }
 
