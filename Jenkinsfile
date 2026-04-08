@@ -51,7 +51,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 sh '''
-                docker run -d -p 3000:3000 --name node-app $IMAGE_NAME:$BUILD_NUMBER
+                docker run -d -p 3002:3000 --name node-app $IMAGE_NAME:$BUILD_NUMBER
                 '''
             }
         }
