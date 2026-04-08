@@ -11,5 +11,6 @@ RUN npm install
 # Copy rest of the source code
 COPY . .
 
+EXPOSE 3000
 CMD ["npm", "start"]
 
